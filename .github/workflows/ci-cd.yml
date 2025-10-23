@@ -146,8 +146,7 @@ jobs:
         run: |
           echo "🚀 Deploying to production environment"
           echo "Image: \${{ needs.build.outputs.image-tag }}"
-          sleep 15
-          echo "✅ Production deployment completed"
+          exit 1  # Force failure to trigger rollback
 
       - name: Post-deployment verification
         run: |
